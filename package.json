@@ -4,6 +4,7 @@
   "main": "./index",
   "dependencies": {
     "ar-drone": "0.0.5",
+    "ws":"0.4.25",
     "leapjs":"0.1.2"
   },
   "devDependencies": {
