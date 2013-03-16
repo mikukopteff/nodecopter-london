@@ -23,39 +23,41 @@ client
   });
 */
 
+var i = 0;
+
 Leap.loop({enableGestures: true}, function(frame) {
 
     //console.log(frame);
 
+    if( i % 10 == 0 ) {
 
-    var hands = frame.hands;
+        var hands = frame.hands;
 
-    if( hands.length > 0 ) {
+        if( hands.length > 0 ) {
 
-        var firstHand = hands[0];
+            var firstHand = hands[0];
 
-        ///console.log(firstHand);
+            ///console.log(firstHand);
 
-        var position = firstHand.palmPosition;
+            var position = firstHand.palmPosition;
 
-        var yPos = position[1];
+            var yPos = position[1];
 
-        console.log(yPos);
+            console.log(yPos);
 
-        var adjustedYPos = (yPos - 60) / 50;
+            var adjustedYPos = (yPos - 60) / 50;
 
-        console.log('adjustedYPos', adjustedYPos);
+            console.log('adjustedYPos', adjustedYPos);
 
-        /*
-        // Invert
-        var zPosition = -position[2];
+            client.up( adjustedYPos );
 
-        var adjustedZPosition = (zPosition - 20) / 10;
-
-        console.log('adjustedZPosition', adjustedZPosition);
-        */
+        }
 
     }
+
+    i++;
+
+    if( i == 100 ) i = 0;
 
 
     /*
