@@ -19,8 +19,14 @@ client
     this.land();
   });
 
-Leap.loop(function(frame) {
+Leap.loop({enableGestures: true}, function(frame) {
 
-    console.log(frame);
+    //console.log(frame);
+
+    if( frame.gestures && frame.gestures.length > 0 ) {
+
+        console.log('WOO GESTURES!', frame.gestures );
+
+    }
 
 });
