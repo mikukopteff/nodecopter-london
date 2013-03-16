@@ -1,4 +1,2 @@
-nodecopter-logon
-================
-
-nodecopter.com London event
+Nodecopter London Event
+=======================
