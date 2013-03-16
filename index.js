@@ -1,15 +1,13 @@
 #!/usr/bin/env node
 
-var App = require('./lib/app');
+var App = require('./lib/app'), app = new App({debug:true});
 
 console.log( "Starting" );
 
-var a = new App();
-
-a.takeoff();
+app.takeoff();
 
 setTimeout(function() {
-  a.start();
+  app.start();
 }, 1000);
 
 
