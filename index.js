@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 var arDrone = require('ar-drone');
+var Leap = require('leapjs').Leap;
+
 var client = arDrone.createClient();
 
 client.takeoff();
@@ -16,3 +18,9 @@ client
     this.stop();
     this.land();
   });
+
+Leap.loop(function(frame) {
+
+    console.log(frame);
+
+});
