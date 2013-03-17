@@ -1,22 +1,11 @@
 #!/usr/bin/env node
 
-var arDrone = require('ar-drone');
-var Gesture = require('leapjs').Gesture;
-var Leap = require('leapjs').Leap;
-var Motion = require('leapjs').Motion;
+var App = require('./lib/app'), app = new App({debug:true});
 
-var client = arDrone.createClient();
+console.log( "Starting" );
 
-client.takeoff();
+app.takeoff();
 
-client
-  .after(5000, function() {
-    this.clockwise(0.5);
-  })
-  .after(3000, function() {
-    this.animate('flipLeft', 15);
-  })
-  .after(1000, function() {
-    this.stop();
-    this.land();
-  });
+setTimeout(function() {
+    app.start();
+}, 1000);
